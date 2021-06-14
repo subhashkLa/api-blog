@@ -1,0 +1,2186 @@
+@import url("https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css");
+@import url("https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.css");
+@import url("https://fonts.googleapis.com/css2?family=Nunito+Sans:ital,wght@0,200;0,300;0,400;0,600;0,700;0,800;0,900;1,200;1,300;1,400;1,600;1,700;1,800;1,900&display=swap ");
+@import url("https://fonts.googleapis.com/css2?family=Knewave&display=swap");
+@import url("https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.css");
+
+:root {
+  --blue: blue;
+  --red: red;
+  --gray: gray;
+  --white: white;
+  --whitesmoke: #fbfbfb;
+  --black: black;
+  --black-one: #191919;
+  --border-color: #c7c7c7;
+  --place-holder-search: #c2c2c2;
+  --place-holder-button: #f6921e;
+  --anchor-color: #474d52;
+  --heading-color: #474d52;
+  --button-hover: #0b7dda;
+  --placeholder: #cdcdcd;
+  --donate-color: #50d250;
+  --donate-hover: rgba(0, 128, 0, 0.856);
+  --header-background: #f9f9f9;
+}
+
+/* body {
+  background-color: #e4e4e4;
+  font-family: Open Sans;
+  margin-top: 10%;
+  margin-bottom: 50px;
+} */
+
+#question {
+  background-color: #0094da;
+  color: white;
+  padding: 10px;
+  text-align: center;
+}
+
+#question h4 {
+  background-color: #fff;
+  color: #0b0e21;
+  display: inline-block;
+  padding: 10px 25px;
+  font-size: 20px;
+  font-weight: 600;
+}
+
+#question p {
+  font-size: 20px;
+  font-weight: 700;
+  letter-spacing: 2px;
+  padding-left: 50px;
+  padding-right: 50px;
+}
+
+#answers ul {
+  list-style-type: none;
+  padding: 0;
+  margin-top: 50px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+
+#answers li {
+  background-color: #fff;
+  border: 2px solid #0094da;
+  min-height: 70px;
+  width: 48%;
+  display: flex;
+  margin-bottom: 30px;
+  transition: color 0.3s ease, border-color 0.3s ease, transform 0.3s ease;
+  cursor: pointer;
+}
+
+#answers li span {
+  background-color: #0084da;
+  color: #fff;
+  font-size: 30px;
+  flex: 75px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: background-color 0.3s ease;
+}
+
+#answers li p {
+  color: #0b0e21;
+  font-size: 16px;
+  font-weight: 600;
+  flex: calc(100% - 75px);
+  margin: auto 20px;
+  transition: color 0.3s ease;
+}
+
+#answers li:after {
+  display: block;
+}
+
+#answers li:hover {
+  transform: scale(1.03);
+}
+
+#answers li.right {
+  border-color: #1ea55b;
+  color: #1ea55b;
+}
+
+#answers li.right span {
+  background-color: #1ea55b;
+}
+
+#answers li.right p {
+  color: #1ea55b;
+}
+
+#answers li.wrong {
+  border-color: #dc0a0a;
+  color: #dc0a0a;
+}
+
+#answers li.wrong span {
+  background-color: #dc0a0a;
+}
+
+#answers li.wrong p {
+  color: #dc0a0a;
+}
+
+#submit {
+  text-align: center;
+  margin: 20px 0;
+}
+
+.fancy-btn {
+  border: 2px solid #0b0e21;
+  border-radius: 0;
+  background-color: #0b0e21;
+  color: #fff;
+  display: inline-block;
+  font-size: 18px;
+  font-weight: 600;
+  padding: 14px 75px;
+  margin: 0 auto;
+  text-transform: uppercase;
+  transition: color 0.2s ease, background-color 0.2s ease;
+}
+
+.fancy-btn:hover {
+  background-color: #fff;
+  color: #0b0e21;
+}
+
+.popup-container {
+  position: fixed;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  background-color: rgba(0, 0, 0, 0.5);
+  z-index: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.popup {
+  text-align: center;
+  background-color: #fff;
+  border-radius: 10px;
+  overflow: hidden;
+}
+
+.popup h1 {
+  background-color: #0094da;
+  color: white;
+  border-bottom: 1px solid #ccc;
+  padding: 20px;
+  margin-top: 0;
+}
+
+.popup p {
+  font-size: 18px;
+  letter-spacing: 1px;
+  margin: 20px 10% 0;
+}
+
+.popup .fancy-btn {
+  margin: 20px auto;
+}
+
+@media (max-width: 768px) {
+  #question p {
+    padding-left: 10px;
+    padding-right: 10px;
+  }
+
+  #answers li {
+    width: 100%;
+  }
+
+  #submit button {
+    width: 100%;
+  }
+}
+
+body {
+  font-family: "Oswald", sans-serif;
+  padding: 0px !important;
+}
+
+/* header-start */
+.header {
+  width: 100%;
+  height: auto;
+  background-color: var(--header-background);
+}
+
+.navbar {
+  background-color: var(--header-background);
+}
+
+/* mobile-menu */
+
+.offcanvas-header {
+  display: none;
+}
+
+@media (max-width: 992px) {
+  .offcanvas-header {
+    display: block;
+  }
+  .navbar-collapse {
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    left: 100%;
+    width: 100%;
+    padding-right: 1rem;
+    padding-left: 1rem;
+    overflow-y: auto;
+    visibility: hidden;
+    background-color: black;
+    transition: visibility 0.2s ease-in-out, -webkit-transform 0.2s ease-in-out;
+  }
+  .navbar-collapse.show {
+    visibility: visible;
+    transform: translateX(-100%);
+    z-index: 2;
+  }
+  .search-from button {
+    position: absolute;
+    left: 178px;
+    top: 6px;
+    background: no-repeat;
+    border: none;
+    padding: 0px;
+    color: var(--place-holder-button);
+  }
+
+  @media (max-width: 260px) {
+    .logo-sec img {
+      width: 80px !important;
+    }
+  }
+  #nav-one,
+  #nav-eight,
+  #nav-twelve,
+  #nav-fourteen,
+  #nav-sixteen {
+    margin-left: 5px !important;
+  }
+}
+/* mobile-menu-end */
+
+/* navbar-image */
+
+.nav-link.navone {
+  background: url(/img/nav/index.png);
+  background-repeat: no-repeat;
+  background-size: 100%;
+}
+.nav-link.navtwo {
+  background: url(/img/nav/buddhist_temple.png);
+  background-repeat: no-repeat;
+  background-size: 100%;
+}
+.nav-link.navthree {
+  background: url(/img/nav/charity.png);
+  background-repeat: no-repeat;
+  background-size: 100%;
+}
+.nav-link.navfour {
+  background: url(/img/nav/buddhism.png);
+  background-repeat: no-repeat;
+  background-size: 100%;
+}
+.nav-link.navfive {
+  background: url(/img/nav/soul_learning.png);
+  background-repeat: no-repeat;
+  background-size: 100%;
+}
+.nav-link.navsix {
+  background: url(/img/nav/self_learning.png);
+  background-repeat: no-repeat;
+  background-size: 100%;
+}
+.nav-link.navseven {
+  background: url(/img/nav/self_refuge.png);
+  background-repeat: no-repeat;
+  background-size: 100%;
+}
+.nav-link.naveight {
+  background: url(/img/nav/self_repent.png);
+  background-repeat: no-repeat;
+  background-size: 100%;
+}
+
+.nav-link.navnine {
+  background: url(/img/nav/health.png);
+  background-repeat: no-repeat;
+  background-size: 100%;
+}
+.nav-link.navten {
+  background: url(/img/nav/vegan-shop.png);
+  background-repeat: no-repeat;
+  background-size: 100%;
+}
+.nav-link.naveleven {
+  background: url(/img/nav/temple_tours.png);
+  background-repeat: no-repeat;
+  background-size: 100%;
+}
+.nav-link.navtwelve {
+  background: url(/img/nav/y-messenger.png);
+  background-repeat: no-repeat;
+  background-size: 100%;
+}
+.nav-link.navthirteen {
+  background: url(/img/nav/donation_btn.png);
+  background-repeat: no-repeat;
+  background-size: 100%;
+}
+.nav-link.navfourteen {
+  background: url(/img/nav/login.png);
+  background-repeat: no-repeat;
+  background-size: 100%;
+}
+.nav-link.navfifteen {
+  background: url(/img/nav/sign_up.png);
+  background-repeat: no-repeat;
+  background-size: 100%;
+}
+.nav-link.navsixteen {
+  background: url(/img/nav/eng.png);
+  background-repeat: no-repeat;
+  background-size: 100%;
+}
+.nav-link.navseventeen {
+  background: url(/img/nav/eng.png);
+  background-repeat: no-repeat;
+  background-size: 100%;
+}
+
+/* navbar-image-end */
+
+/*language-btn*/
+#nav-sixteen:hover ~ #nav-seventeen {
+  opacity: 1;
+}
+
+#nav-seventeen {
+  position: absolute;
+  bottom: 0;
+  right: 22px;
+  top: 45px;
+  opacity: 0;
+}
+.nav-link {
+  display: inline-block;
+  width: 35px;
+  height: 35px;
+  border-radius: 5px;
+  padding: 0px;
+  margin: 0 5px;
+}
+
+/*logo-image*/
+
+.logo-sec img {
+  height: 41px;
+  width: 150px;
+  margin-left: 0px;
+  margin-top: -5px;
+}
+/*logo-image-end*/
+
+@media (min-width: 992px) {
+  .navbar-expand-lg .navbar-nav .nav-link {
+    padding-right: 0px;
+    padding-left: 0px;
+  }
+}
+@media (max-width: 300px) {
+  .temple-section .section-title {
+    width: 100%;
+    height: 60px;
+  }
+  .temple-section .head-title {
+    font-size: 16px;
+  }
+  .viewall {
+    margin-top: 5px;
+  }
+}
+
+/* navbar-hover-image */
+.navone:hover {
+  cursor: pointer;
+  content: url("/img/nav/index-hover.png");
+}
+
+.navtwo:hover {
+  cursor: pointer;
+  content: url("/img/nav/buddhist_temple_hover.png");
+}
+.navtwo:active {
+  cursor: pointer;
+  content: url("/img/new/2.png");
+}
+
+.navthree:hover {
+  cursor: pointer;
+  content: url("/img/nav/charity_hover.png");
+}
+.navfour:hover {
+  cursor: pointer;
+  content: url("/img/nav/buddhism_hover.png");
+}
+.navfive:hover {
+  cursor: pointer;
+  content: url("/img/nav/soul_learning_hover.png");
+}
+.navsix:hover {
+  cursor: pointer;
+  content: url("/img/nav/self_learning_hover.png");
+}
+.navseven:hover {
+  cursor: pointer;
+  content: url("/img/nav/self_refuge_hover.png");
+}
+.naveight:hover {
+  cursor: pointer;
+  content: url("/img/nav/self_repent_hover.png");
+}
+.navnine:hover {
+  cursor: pointer;
+  content: url("/img/nav/health_hover.png");
+}
+.navten:hover {
+  cursor: pointer;
+  content: url("/img/nav/vegan_shop_hover.png");
+}
+
+.naveleven:hover {
+  cursor: pointer;
+  content: url("/img/nav/temple_tours_hover.png");
+}
+.navtwelve:hover {
+  cursor: pointer;
+  content: url("/img/nav/y-messenger_hover.png");
+}
+.navthirteen:hover {
+  cursor: pointer;
+  content: url("/img/nav/donation_btn_hover.png");
+}
+.navfourteen:hover {
+  cursor: pointer;
+  content: url("/img/nav/login_hover.png");
+}
+
+.navfifteen:hover {
+  cursor: pointer;
+  content: url("/img/nav/sign_up_hover.png");
+}
+
+/* navbar-hover-image-end */
+
+.search-from {
+  position: relative;
+}
+
+.search-from input {
+  background: var(--whitesmoke);
+  border: 1px solid var(--border-color);
+  padding: 8px;
+  height: 35px;
+  border-radius: 0px;
+  font-size: 14px;
+  width: 200px;
+  max-width: 100%;
+  margin-bottom: 7px;
+  outline-color: var(--place-holder-button);
+}
+
+.search-from input::placeholder {
+  color: var(--placeholder);
+}
+.search-from button {
+  position: absolute;
+  right: 11px;
+  top: 6px;
+  background: no-repeat;
+  border: none;
+  padding: 0px;
+  color: var(--place-holder-button);
+}
+
+/* between-nav-icon-space */
+
+#nav-one {
+  margin-left: 50px;
+}
+#nav-eight {
+  margin-left: 50px;
+}
+#nav-twelve {
+  margin-left: 50px;
+}
+#nav-fourteen {
+  margin-left: 50px;
+}
+#nav-sixteen {
+  margin-left: 50px;
+}
+
+/*between-icon-space-end*/
+
+.fixedpraybox {
+  position: fixed;
+  z-index: 99;
+  right: 0;
+  bottom: 10px;
+  width: 200px;
+  text-align: right;
+  padding: 10px;
+  border-radius: 12px 0px 0px 12px;
+}
+.fixedpraybox ul.list-pray li {
+  line-height: 27px;
+  margin-bottom: 7px;
+  transition: all 1s;
+  list-style: none;
+}
+.fixedpraybox ul.list-pray li a:hover {
+  padding: 9px 55px 9px 9px;
+}
+
+.fixedpraybox ul.list-pray li:last-child {
+  border: none;
+}
+.fixedpraybox ul.list-pray li a {
+  color: var(--black);
+  text-transform: capitalize;
+  font-size: 13px;
+  background-color: var(--white);
+  padding: 9px 9px;
+  margin-top: 20px;
+  border-radius: 5px;
+  transition: all 1s;
+  text-decoration: none;
+  box-shadow: 0 0 20px 7px rgba(204, 204, 204, 0.3);
+}
+
+.fixedpraybox ul.list-pray li a img {
+  height: 23px;
+  margin-left: 8px;
+}
+
+@media (min-width: 992px) and (max-width: 1056px) {
+  .navfive,
+  .navsix,
+  .navseven,
+  .naveight,
+  .navnine,
+  .navten,
+  .naveleven {
+    display: none;
+  }
+}
+@media (min-width: 1056px) and (max-width: 1100px) {
+  .navseven,
+  .naveight,
+  .navnine,
+  .navten,
+  .naveleven {
+    display: none;
+  }
+}
+@media (min-width: 1100px) and (max-width: 1200px) {
+  .navnine,
+  .navten,
+  .naveleven {
+    display: none;
+  }
+}
+@media (min-width: 1200px) and (max-width: 1300px) {
+  .navnine,
+  .naveleven {
+    display: none;
+  }
+}
+
+/* header-end */
+
+/* slider-part */
+
+.banner-section {
+  padding: 44px 0px 80px 0px;
+  background: url(/img/bg-banner/17.png);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  margin-top: 50px;
+}
+.banner-content {
+  text-align: center;
+  position: relative;
+}
+.banner-content a.votebtn {
+  display: inline-block;
+  padding: 10px 25px;
+  margin: 0 6px;
+  font-size: 20px;
+  font-weight: 600;
+  background: #27489d;
+  color: #fff;
+  position: absolute;
+  bottom: 17px;
+  right: 0;
+}
+.banner-content a.votebtn:hover {
+  background: var(--black-one);
+}
+.banner-content h3 {
+  font-size: 37px;
+  font-weight: 700;
+  color: var(--black);
+}
+.banner-content h2 {
+  font-size: 40px;
+  font-weight: 800;
+}
+.banner-content h2 span {
+  color: var(--place-holder-button);
+  font-weight: 900;
+}
+
+.owl-carousel {
+  display: block;
+  width: 100%;
+  -webkit-tap-highlight-color: transparent;
+  position: relative;
+  z-index: 1;
+}
+
+.pray-section {
+  margin-top: 50px;
+}
+
+@media (max-width: 575.98px) {
+  .banner-section {
+    padding: 0px 0px 80px 0px;
+    margin-top: 30px;
+  }
+  .banner-content h3 {
+    font-size: 27px;
+    font-weight: 700;
+    color: var(--black);
+  }
+  .banner-content h2 {
+    font-size: 25px;
+    font-weight: 800;
+    margin-bottom: 0px;
+  }
+
+  .pray-section {
+    margin-top: 0px;
+  }
+}
+@media (min-width: 576px) and (max-width: 767.98px) {
+  .banner-section {
+    padding: 0px 0px 80px 0px;
+    margin-top: 30px;
+  }
+
+  .banner-content h3 {
+    font-size: 27px;
+    font-weight: 700;
+    color: var(--black);
+  }
+  .banner-content h2 {
+    font-size: 28px;
+    font-weight: 800;
+    margin-bottom: 0px;
+  }
+  .pray-section {
+    margin-top: 0px;
+  }
+}
+
+@media (min-width: 768px) and (max-width: 991.98px) {
+  .banner-section {
+    padding: 0px 0px 80px 0px;
+    margin-top: 30px;
+  }
+  .banner-content h2 {
+    font-size: 28px;
+    font-weight: 800;
+    margin-bottom: 0px;
+  }
+  .banner-content h3 {
+    font-size: 27px;
+    font-weight: 700;
+    color: var(--black);
+  }
+  .pray-section {
+    margin-top: 10px;
+  }
+}
+/* slider-part-end*/
+
+/* <!-- buddist-temple-section--> */
+
+.temple-section,
+.charity-section,
+.meditation-section,
+.activities-section,
+.fund-raising-section,
+.table-section,
+.Donated-Items-nearby,
+.Self-Repent-section,
+.vegan-shop-restaurants,
+.free-accommodation {
+  border-bottom: rgb(228 228 228);
+  border-bottom-style: solid;
+  border-bottom-width: 5px;
+  margin-bottom: 10px;
+}
+.temple-section .card-title:hover {
+  color: var(--place-holder-button);
+  transition: all 0.2s;
+}
+
+.section-title h2 {
+  font-size: 1.5rem;
+  color: var(--black);
+  font-weight: 600;
+  margin-bottom: 0px;
+}
+
+.section-title a {
+  text-decoration: none;
+}
+.head-title {
+  color: var(--black);
+  transition: all 0.5s;
+}
+.head-title:hover {
+  color: var(--place-holder-button);
+}
+
+.section-title h2 a.viewall {
+  color: var(--place-holder-button);
+  font-size: 14px;
+  float: right;
+  display: inline-block;
+  padding-right: 6px;
+  padding-top: 5px;
+}
+.card {
+  width: 100%;
+  margin-top: 6px;
+  border: 0px;
+}
+
+.card .image-container {
+  width: 100%;
+  height: 170px;
+  overflow: hidden;
+  position: relative;
+  border-radius: 0px;
+}
+
+.card .image-container img {
+  width: 100%;
+  height: 100%;
+}
+
+.card-body .card-details {
+  color: var(--anchor-color);
+  font-size: 17px;
+  transition: all 0.2s;
+}
+.card-body .card-details:hover {
+  color: var(--place-holder-button);
+}
+
+.card-body {
+  padding: 12px 0px;
+}
+
+.card-body .card-title {
+  font-family: "Oswald", sans-serif;
+  font-size: 1rem;
+  color: var(--heading-color);
+  font-weight: 600;
+  margin: 0 0 2px;
+}
+
+.card-body .map-icon a {
+  color: var(--anchor-color);
+  font-family: "Oswald", sans-serif;
+  font-weight: 500;
+  text-decoration: none;
+  font-size: 14px;
+}
+
+.card-body .map-icon i {
+  color: var(--red);
+  padding-right: 5px;
+}
+
+.map-icon {
+  margin-bottom: 0px;
+}
+
+#more11 {
+  display: none;
+}
+#more12 {
+  display: none;
+}
+#more13 {
+  display: none;
+}
+#more14 {
+  display: none;
+}
+
+.card-body button {
+  color: var(--red);
+  background-color: transparent;
+  border: 0px;
+}
+
+.card-body a {
+  color: var(--anchor-color);
+  font-family: "Oswald", sans-serif;
+  font-weight: 500;
+  text-decoration: none;
+}
+
+.share-container .fa-heart {
+  font-size: 19px;
+  color: var(--gray);
+}
+.share-container .fa-heart:hover {
+  font-size: 19px;
+  color: var(--red);
+}
+
+.share-container .fa-share {
+  font-size: 19px;
+  color: var(--gray);
+}
+.share-container .fa-share:hover {
+  font-size: 19px;
+  color: var(--red);
+}
+
+.share-container a {
+  float: right;
+}
+.favorite-image {
+  width: 64%;
+  height: 20px;
+  margin-bottom: 3px;
+}
+.favorite-image-active {
+  content: url("/img/new/67.png");
+}
+
+/* buddist-temple-section-end  */
+
+/* .charity-section */
+#more {
+  display: none;
+}
+#moretwo {
+  display: none;
+}
+#morethree {
+  display: none;
+}
+#morefour {
+  display: none;
+}
+@media (max-width: 200px) {
+  .charitie-section .section-title {
+    width: 100%;
+    height: 60px;
+  }
+
+  .charity-section .head-title {
+    font-size: 13px;
+  }
+  .viewall {
+    margin-top: 5px;
+  }
+}
+
+/* .charity-section-end */
+
+/* meditation-section */
+.meditation-card-details-container p {
+  margin-bottom: 0px;
+}
+
+.meditation-section .fa-registered {
+  color: var(--gray);
+  font-size: 17px;
+}
+.meditation-section .fa-registered:hover {
+  color: var(--blue);
+  font-size: 17px;
+}
+
+@media (max-width: 575.98px) {
+  .meditation-section .section-title {
+    width: 100%;
+    height: 50px;
+  }
+  .meditation-section .head-title {
+    font-size: 16px;
+  }
+  .viewall {
+    margin-top: 5px;
+  }
+}
+@media (max-width: 420px) {
+  .meditation-section .section-title {
+    width: 100%;
+    height: 70px;
+  }
+  .meditation-section .head-title {
+    font-size: 16px;
+  }
+  .viewall {
+    margin-top: 5px;
+  }
+}
+@media (max-width: 240px) {
+  .meditation-section .section-title {
+    width: 100%;
+    height: 100px;
+  }
+  .meditation-section .head-title {
+    font-size: 17px;
+  }
+  .viewall {
+    margin-top: 5px;
+  }
+}
+/* meditation-section-end */
+
+/* activities-section */
+.activities-card-details-container p {
+  margin-bottom: 0px;
+}
+
+.activities-section .share-container i {
+  float: right;
+}
+/* activities-section-end */
+
+/* fund-raising-events */
+.fund-raising-section .card-title:hover {
+  color: var(--place-holder-button);
+  transition: all 0.2s;
+}
+@media (max-width: 328px) {
+  .fund-raising-section .section-title {
+    width: 100%;
+    height: 30px;
+  }
+  .fund-raising-section .head-title {
+    font-size: 16px;
+  }
+  .viewall {
+    margin-top: 5px;
+  }
+}
+@media (max-width: 250px) {
+  .fund-raising-section .section-title {
+    width: 100%;
+    height: 60px;
+  }
+}
+
+/* fund-raising-events-end */
+
+/* table */
+
+.classes-list .table td,
+.classes-list .table th {
+  border: none;
+  padding: 10px;
+  vertical-align: middle;
+}
+.classes-list .table-striped tbody tr:nth-of-type(odd) {
+  background-color: var(--white);
+}
+.classes-list .table td a.registerbtn {
+  display: inline-block;
+  padding: 4px 12px;
+  color: var(--place-holder-button);
+  border-radius: 30px;
+  margin-right: -40px;
+  font-size: 15px;
+}
+.classes-list .table th {
+  background: var(--place-holder-button);
+  color: var(--white);
+  margin-right: 15px;
+}
+
+@media screen and (max-width: 1180px) {
+  .classes-list .table td,
+  .classes-list .table th {
+    white-space: nowrap;
+  }
+}
+
+/* table-end */
+
+/* Donated-Items-nearby-section */
+
+#moretwenty {
+  display: none;
+}
+#moretwentyone {
+  display: none;
+}
+#moretwentytwo {
+  display: none;
+}
+#moretwentythree {
+  display: none;
+}
+#moretwentyfour {
+  display: none;
+}
+#moretwentyfive {
+  display: none;
+}
+#moretwentysix {
+  display: none;
+}
+#moretwentyseven {
+  display: none;
+}
+
+.Donated-Items-nearby .card-img-top {
+  border: rgb(228 228 228);
+  border-style: solid;
+  border-width: 5px;
+}
+.Donated-Items-nearby .share-container i {
+  float: right;
+}
+.Donated-Items-nearby .share-container img {
+  float: right;
+}
+
+@media (min-width: 275px) and (max-width: 340px) {
+  .Donated-Items-nearby .section-title {
+    width: 100%;
+    height: 60px;
+  }
+  .Donated-Items-nearby .head-title {
+    font-size: 16px;
+  }
+  .viewall {
+    margin-top: 5px;
+  }
+}
+
+@media (min-width: 10px) and (max-width: 275px) {
+  .Donated-Items-nearby .section-title {
+    width: 100%;
+    height: 60px;
+  }
+  .Donated-Items-nearby .head-title {
+    font-size: 14px;
+  }
+  .viewall {
+    margin-top: 5px;
+  }
+}
+
+/* Donated Items nearby-end */
+
+/* Self-Repent Posted From Users-section  */
+.Self-Repent-section {
+  padding-bottom: 10px;
+}
+.Self-Repent-section .repentcontent {
+  padding: 20px;
+  margin: 10px;
+  box-shadow: 0 0 10px #ffedd7;
+  border-radius: 25px;
+  background: var(--white);
+  text-align: center;
+}
+.Self-Repent-section .repentcontent h3 {
+  font-size: 24px;
+  font-weight: 800;
+}
+.Self-Repent-section .repentcontent p {
+  font-size: 16px;
+  line-height: 28px;
+}
+.Self-Repent-section .repentcontent span {
+  color: var(--place-holder-button);
+
+  font-size: 13px;
+}
+.Self-Repent-section .self-repent-slider .owl-dots {
+  text-align: center;
+}
+.Self-Repent-section .self-repent-slider .owl-dot {
+  margin: 0 6px;
+  width: 50px;
+  height: 12px;
+  background: var(--border-color);
+  border-radius: 30px;
+  outline: none;
+}
+.Self-Repent-section .self-repent-slider .owl-dots .owl-dot.active {
+  background: #f6921e;
+}
+
+.Self-Repent-section i {
+  color: var(--gray);
+  position: absolute;
+  bottom: 14%;
+  right: 9%;
+}
+
+.Self-Repent-section a {
+  color: var(--place-holder-button);
+}
+/* Self-Repent Posted From Users-section-end */
+
+/* vegan-shop-restaurants */
+.vegan-shop-restaurants .card-title:hover {
+  color: var(--place-holder-button);
+  transition: all 0.2s;
+}
+
+@media (min-width: 280px) and (max-width: 380px) {
+  .vegan-shop-restaurants .section-title {
+    width: 100%;
+    height: 30px;
+  }
+  .vegan-shop-restaurants .head-title {
+    font-size: 16px;
+  }
+  .viewall {
+    margin-top: 5px;
+  }
+}
+@media (min-width: 220px) and (max-width: 280px) {
+  .vegan-shop-restaurants .section-title {
+    width: 100%;
+    height: 60px;
+  }
+  .vegan-shop-restaurants .head-title {
+    font-size: 16px;
+  }
+  .viewall {
+    margin-top: 5px;
+  }
+}
+@media (min-width: 120px) and (max-width: 180px) {
+  .vegan-shop-restaurants .section-title {
+    width: 100%;
+    height: 60px;
+  }
+  .vegan-shop-restaurants .head-title {
+    font-size: 8px;
+  }
+  .viewall {
+    margin-top: 5px;
+  }
+}
+/* vegan-shop-restaurants-end */
+
+/* free-accommodation-section */
+
+#moretwentyeight {
+  display: none;
+}
+#moretwentynine {
+  display: none;
+}
+
+#morethirteen {
+  display: none;
+}
+#morethirty-one {
+  display: none;
+}
+
+@media (min-width: 200px) and (max-width: 290px) {
+  .free-accommodation .section-title {
+    width: 100%;
+    height: 60px;
+  }
+  .free-accommodation .head-title {
+    font-size: 16px;
+  }
+  .viewall {
+    margin-top: 5px;
+  }
+}
+@media (min-width: 120px) and (max-width: 200px) {
+  .free-accommodation .section-title {
+    width: 100%;
+    height: 60px;
+  }
+  .free-accommodation .head-title {
+    font-size: 12px;
+  }
+  .viewall {
+    margin-top: 5px;
+  }
+}
+@media (min-width: 220px) and (max-width: 270px) {
+  .card-body .map-icon a {
+    color: var(--anchor-color);
+    font-family: "Oswald", sans-serif;
+    font-weight: 500;
+    text-decoration: none;
+    font-size: 11px;
+  }
+}
+@media (min-width: 120px) and (max-width: 220px) {
+  .card-body .map-icon a {
+    color: var(--anchor-color);
+    font-family: "Oswald", sans-serif;
+    font-weight: 500;
+    text-decoration: none;
+    font-size: 8px;
+  }
+}
+
+/* free-accommodation-section-end */
+
+/* covid-alert-section */
+.covid-alert-section {
+  padding: 70px 0;
+  background: var(--place-holder-button);
+}
+.covid-alert-section .row {
+  align-items: center;
+}
+.covid-alert-section h2 {
+  color: var(--white);
+  letter-spacing: 1px;
+  font-size: 30px;
+  font-weight: 600;
+}
+
+.covid-alert-section p {
+  color: var(--white);
+  margin-bottom: 0px;
+  font-size: 18px;
+}
+.covid-alert-section a.donate-btn {
+  display: inline-block;
+  padding: 15px 45px;
+  border-radius: 30px;
+  color: #f6921e;
+  font-size: 19px;
+  font-weight: 700;
+  background: #fff;
+  text-transform: uppercase;
+}
+
+.covid-alert-section a.donate-btn:hover {
+  background: var(--black);
+  color: var(--white);
+}
+@media (min-width: 200px) and (max-width: 575px) {
+  .covid-alert-section h2 {
+    color: var(--white);
+    letter-spacing: 1px;
+    font-size: 20px;
+    font-weight: 600;
+    text-align: center;
+  }
+  .covid-alert-section p {
+    text-align: center;
+  }
+  .covid-alert-section a.donate-btn {
+    font-size: 14px;
+    margin-top: 20px;
+  }
+}
+@media (min-width: 575px) and (max-width: 992px) {
+  .covid-alert-section h2 {
+    color: var(--white);
+    letter-spacing: 1px;
+    font-size: 20px;
+    font-weight: 600;
+    text-align: center;
+  }
+  .covid-alert-section p {
+    text-align: center;
+  }
+  .covid-alert-section a.donate-btn {
+    font-size: 14px;
+    margin-top: 20px;
+  }
+}
+/* covid-alert-section-end */
+
+/* footer */
+
+.mainfooter {
+  background: url(/img/footbg.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  padding: 50px 0;
+  text-align: center;
+}
+
+.vistior,
+.footcopy,
+.foot-nav,
+.foot-social {
+  margin-top: 25px;
+}
+.mainfooter .footlogo p.tagline {
+  font-size: 24px;
+  color: var(--white);
+  font-weight: 600;
+  margin-top: 10px;
+  text-align: center;
+}
+
+.foot-nav a {
+  position: relative;
+  display: inline-block;
+  font-size: 17px;
+  color: var(--white);
+  margin: 0 10px;
+  text-decoration: none;
+}
+.foot-nav a:after {
+  content: "";
+  width: 8px;
+  height: 8px;
+  background: var(--place-holder-button);
+  border-radius: 100%;
+  display: inline-block;
+  margin-left: 17px;
+}
+
+.foot-nav a:last-child:after {
+  display: none;
+}
+.foot-social a {
+  display: inline-block;
+  width: 45px;
+  height: 45px;
+  background: var(--place-holder-button);
+  color: var(--white);
+  line-height: 45px;
+  text-align: center;
+  font-size: 20px;
+  border-radius: 100%;
+  margin: 0 6px;
+}
+.foot-social a:hover {
+  background: var(--white);
+  color: var(--place-holder-button);
+}
+
+.footcopy p {
+  font-size: 15px;
+  color: var(--border-color);
+  text-align: center;
+}
+
+.footcopy p a {
+  display: inline-block;
+  color: var(--border-color);
+  margin-left: 4px;
+}
+
+.vistior p {
+  color: var(--white);
+  font-size: 18px;
+  font-weight: 600;
+  margin: 0px;
+  text-align: center;
+  margin-right: 22px;
+}
+.vistior p span {
+  display: inline-block;
+  background: var(--white);
+  color: var(--black);
+  width: 120px;
+  height: 30px;
+  line-height: 30px;
+  letter-spacing: 16px;
+  padding-left: 13px;
+}
+.footcopy p a:hover,
+.foot-nav a:hover {
+  color: var(--place-holder-button);
+}
+.classes-list {
+  padding: 0;
+}
+
+/* footer-end */
+
+/* org list */
+
+#body-row {
+  margin-left: 0;
+  margin-right: 0;
+}
+#sidebar-container {
+  min-height: 100vh;
+  background-color: var(--white);
+  padding: 0;
+}
+
+/* Sidebar sizes when expanded and expanded */
+
+.sidebar-expanded {
+  width: 310px;
+  transition: all 1s;
+}
+.sidebar-collapsed {
+  width: 60px;
+  transition: all 1s;
+}
+.space-between {
+  margin-right: 5px;
+}
+/* Menu item*/
+#sidebar-container .list-group a {
+  height: 45px;
+  color: var(--collapsed);
+  font-size: 15px;
+}
+
+#sidebar-container .list-group a:hover {
+  background-color: var(--border-color);
+}
+.menu-collapsed {
+  color: var(--collapsed);
+}
+
+.submenu-icon {
+  display: none;
+}
+/* Submenu item*/
+#sidebar-container .list-group .sidebar-submenu a {
+  height: 40px;
+  padding-left: 68px;
+}
+.sidebar-submenu {
+  font-size: 0.9rem;
+}
+
+.list-group-item {
+  border: 0px;
+}
+
+/* Separators */
+.sidebar-separator-title {
+  background-color: var(--white);
+  height: 35px;
+}
+.sidebar-separator {
+  background-color: var(--white);
+  height: 25px;
+}
+.logo-separator {
+  background-color: var(--white);
+  height: 60px;
+}
+
+/* Closed submenu icon */
+#sidebar-container
+  .list-group
+  .list-group-item[aria-expanded="false"]
+  .submenu-icon::after {
+  content: " \f0d7";
+  font-family: FontAwesome;
+  display: inline;
+  text-align: right;
+  padding-left: 10px;
+}
+/* Opened submenu icon */
+#sidebar-container
+  .list-group
+  .list-group-item[aria-expanded="true"]
+  .submenu-icon::after {
+  content: " \f0da";
+  font-family: FontAwesome;
+  display: inline;
+  text-align: right;
+  padding-left: 10px;
+}
+
+.org-middle {
+  width: 100%;
+  height: auto;
+}
+
+.middle-img img {
+  width: 100%;
+  height: 400px;
+}
+
+.img-nameplate {
+  padding-top: 20px;
+}
+
+.img-btm {
+  width: 100%;
+  height: auto;
+  border-bottom-style: solid;
+  border-bottom-width: 1px;
+  border-bottom-color: var(--gray);
+}
+
+.share-idle-sec .favourite img {
+  width: 23px;
+  height: 23px;
+}
+.share-idle-sec .favourite img:hover {
+  content: url(/img/nav/add_two_watchlist_hover.png);
+}
+
+.img-nameplate h5 {
+  display: inline;
+  font-size: 19px;
+  color: var(--heading-color);
+}
+.share-idle-sec {
+  float: right;
+}
+.share-idle-sec i {
+  font-size: 20px;
+  color: var(--gray);
+  padding: 0px 15px;
+}
+.share-idle-sec i:hover {
+  color: var(--red);
+}
+
+.img-de-content :first-child {
+  margin-top: 10px;
+}
+
+.img-date-des {
+  padding: 10px 0px 20px 0px;
+}
+.img-date-des p {
+  display: inline;
+  color: var(--anchor-color);
+}
+
+.video-de-btm {
+  background-color: var(--whitesmoke);
+}
+.video-de-btm video {
+  width: 100%;
+  height: 400px;
+}
+
+.org-right {
+  width: 100%;
+  height: auto;
+  background-color: var(--orange);
+}
+
+.section-image {
+  width: 100%;
+  height: auto;
+  background-color: var(--white);
+}
+
+.section-image img {
+  width: 100%;
+  height: 110px;
+  padding-bottom: 10px;
+}
+.section-image h5 {
+  display: none;
+  text-align: center;
+  padding: 20px 0px;
+  color: var(--white);
+}
+
+.video-title-right h6 {
+  font-size: 15px;
+  font-weight: 500;
+  font-family: system-ui;
+  color: var(--heading-color);
+  margin-bottom: 5px;
+}
+.video-title-right p {
+  margin-bottom: 0;
+  font-size: 13px;
+  font-family: sans-serif;
+  font-weight: 500;
+  color: var(--gray);
+}
+.right-side-bar {
+  padding: 0;
+  margin: 0;
+}
+.right-side-bar .col-6 {
+  padding: 0;
+}
+.right-right-col {
+  padding-left: 15px !important;
+}
+
+#more {
+  display: none;
+}
+#moretwo {
+  display: none;
+}
+#morethree {
+  display: none;
+}
+#morefour {
+  display: none;
+}
+#morefive {
+  display: none;
+}
+#moresix {
+  display: none;
+}
+#moreseven {
+  display: none;
+}
+#moreeight {
+  display: none;
+}
+#more11 {
+  display: none;
+}
+#more12 {
+  display: none;
+}
+#more13 {
+  display: none;
+}
+#more14 {
+  display: none;
+}
+#more15 {
+  display: none;
+}
+#more16 {
+  display: none;
+}
+#more17 {
+  display: none;
+}
+#more18 {
+  display: none;
+}
+#more19 {
+  display: none;
+}
+#more20 {
+  display: none;
+}
+#more21 {
+  display: none;
+}
+#more22 {
+  display: none;
+}
+#more23 {
+  display: none;
+}
+#more24 {
+  display: none;
+}
+#more25 {
+  display: none;
+}
+#more26 {
+  display: none;
+}
+#more27 {
+  display: none;
+}
+
+#org-ful-details-events .fa-registered {
+  color: var(--gray);
+  font-size: 17px;
+}
+
+#org-ful-details-activities .activities-card-details-container:hover {
+  color: var(--anchor-color);
+}
+#org-ful-details-activities,
+#org-full-details-vegan-shop,
+#org-ful-details-events {
+  border-bottom: rgb(228 228 228);
+  border-bottom-style: solid;
+  border-bottom-width: 5px;
+  margin-bottom: 10px;
+}
+
+@media (min-width: 100px) and (max-width: 350px) {
+  .right-side-bar .col-6 {
+    width: 100%;
+  }
+}
+@media (min-width: 100px) and (max-width: 250px) {
+  #org-ful-details-activities .section-title,
+  #org-ful-details-activities .section-title,
+  #org-ful-details-events .section-title,
+  .org-full-details-vegan-shop .section-title {
+    height: 60px;
+  }
+}
+
+/* self-learing-programms-html */
+
+#self_learing_programs .container-two {
+  width: 100%;
+  height: auto;
+}
+.title-training-two {
+  width: 100%;
+  margin: auto;
+  color: var(--place-holder-button);
+  padding: 30px 15px 20px;
+}
+
+.self_learing_section-head h5 {
+  font-weight: 600;
+  font-family: unset;
+}
+
+.self_learing_section-head span {
+  float: right;
+  padding-right: 20%;
+}
+.self_learing_section-head i {
+  letter-spacing: 15px;
+}
+.self_learing_section-head .fa-registered {
+  color: var(--gray);
+}
+.self_learing_section-head .fa-share {
+  color: var(--place-holder-button);
+}
+
+.self_learing_section-btm {
+  width: 90%;
+  margin: auto;
+}
+
+.section-training {
+  padding-bottom: 50px;
+}
+
+/* self-learing-programms-html-end */
+
+/* soul-learning-two */
+
+.self_learning_two_container #idtwo .self_learing_section-head span {
+  float: right;
+  color: var(--place-holder-button);
+  font-weight: 300;
+  font-size: 18px;
+}
+.self_learning_two_container #idtwo .self_learing_section-btm .start-icon {
+  float: right;
+  padding-right: 40%;
+  font-size: 17px;
+  color: var(--red);
+}
+
+/* soul-learning-two-end */
+
+/* bell-htmlpage */
+
+.top-video-container,
+.video-bottom-details-container {
+  width: 70%;
+  margin: auto;
+}
+@media (min-width: 767.98px) and (max-width: 992px) {
+  .pray-section-two {
+    width: 100%;
+    margin: auto;
+    padding-top: 40px;
+  }
+  .pray-section-two img {
+    margin-bottom: 40px;
+  }
+
+  .form-group {
+    margin: 30px;
+  }
+}
+
+@media (min-width: 100px) and (max-width: 768px) {
+  .top-video-container,
+  .video-bottom-details-container {
+    width: 100%;
+    margin: auto;
+  }
+  .pray-section-two {
+    width: 90%;
+    margin: auto;
+    padding-top: 30px;
+  }
+  .pray-section-two img {
+    margin-bottom: 40px;
+  }
+  .pray-section-two p {
+    margin-left: 10px !important;
+  }
+  .form-group {
+    margin: 30px;
+  }
+}
+
+@media (min-width: 330px) and (max-width: 575px) {
+  .bell_meditaion_details {
+    margin-left: 30px;
+  }
+  .pray-section-two {
+    width: 90%;
+    margin: auto;
+  }
+  .pray-section-two img {
+    margin-bottom: 40px;
+  }
+
+  .pray-section-two p {
+    margin-left: 10px !important;
+  }
+  .form-group {
+    margin: 30px;
+  }
+}
+@media (min-width: 100px) and (max-width: 329.98px) {
+  .pray-section-two {
+    width: 80%;
+    margin: auto;
+    margin-bottom: 50px;
+    margin-top: 50px;
+  }
+  .pray-section-two p {
+    margin-left: 0px !important;
+  }
+  .form-group {
+    margin: 20px;
+  }
+}
+
+.details-section {
+  margin-top: 20px;
+}
+
+.final-bell-container .bell {
+  background: url(/img/nav/bell.png);
+  background-repeat: no-repeat;
+  background-size: 100%;
+  position: fixed;
+  top: 2em !important;
+  z-index: 9;
+  right: 40px !important;
+}
+
+#my-gallery {
+  border-style: solid;
+  border-color: var(--border-color);
+  border-width: 1px 1px 1px 1px;
+}
+
+#my-gallery img {
+  width: 100%;
+  height: 300px;
+  padding: 10px;
+}
+
+.main_bell_section ul li {
+  list-style: decimal;
+  font-weight: 500;
+}
+
+.main_bell_section .praybtn {
+  display: inline-block;
+  width: 145px;
+  height: 140px;
+  background: url(/img/praybtn.png);
+  background-repeat: no-repeat;
+  background-size: 100%;
+}
+
+.main_bell_section .pray-section {
+  margin: auto;
+  width: 50%;
+}
+.main_bell_section .pray-section-two p {
+  margin-left: -15px;
+}
+
+.main_bell_section .pray-section-two img {
+  width: 100%;
+  height: 150px;
+  margin-top: -37px;
+}
+.main_bell_section .pray-section-two li {
+  list-style: none;
+  float: left;
+  padding: 0px 18px;
+}
+.main_bell_section .pray-section p {
+  padding-left: 40px;
+  padding-top: 11px;
+  font-size: 21px;
+}
+
+.bell_comment_box .form-group {
+  margin: 30px;
+}
+
+/* bell-htmlpage-end */
+
+/* model */
+#modal_button {
+  /* background: url(./img/nayon.jpg); */
+  background-repeat: no-repeat;
+  background-size: 100%;
+  width: 35px;
+  height: 35px;
+  border-radius: 50%;
+  outline: 0px;
+  border: none;
+}
+
+.modal {
+  display: none; /* Hidden by default */
+  position: fixed; /* Stay in place */
+  z-index: 1000; /* Sit on top */
+  padding-top: 10px; /* Location of the box */
+  left: 0%;
+  top: 0;
+  width: 100%; /* Full width */
+  height: 100%; /* Full height */
+  overflow: auto; /* Enable scroll if needed */
+  border: 0px;
+}
+
+/* Modal Content */
+.modal-content {
+  position: relative;
+  background-color: #fefefe;
+  margin-right: 7%;
+  float: right;
+  padding: 0;
+  width: 30%;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  -webkit-animation-name: animatetop;
+  -webkit-animation-duration: 0.4s;
+  animation-name: animatetop;
+  animation-duration: 0.4s;
+  border: 0px;
+}
+
+/* Add Animation */
+@-webkit-keyframes animatetop {
+  from {
+    top: -300px;
+    opacity: 0;
+  }
+  to {
+    top: 0;
+    opacity: 1;
+  }
+}
+
+@keyframes animatetop {
+  from {
+    top: -300px;
+    opacity: 0;
+  }
+  to {
+    top: 0;
+    opacity: 1;
+  }
+}
+
+.modal-body {
+  padding: 0px;
+}
+.modal-body-top {
+  padding: 20px;
+  border-bottom: 1px solid #dee2e6;
+}
+
+.profile-image img {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+}
+
+.profile_email p {
+  margin-bottom: 5px;
+  margin-top: -7px;
+  font-size: 15px;
+}
+.profile_email a {
+  font-size: 15px;
+}
+.modal-body-bottom .row {
+  margin: 0;
+}
+
+.modal-body-bottom-content a {
+  width: 100%;
+  height: auto;
+  padding: 8px 20px;
+  font-size: 16px;
+  display: inline-block;
+  margin: 3px 0px;
+  color: darkslategrey;
+}
+.modal-body-bottom-content .fa-user {
+  padding-right: 28px;
+  font-size: 25px;
+}
+.modal-body-bottom-content .fa-sign-out {
+  padding-right: 25px;
+  font-size: 25px;
+}
+.modal-body-bottom-content a i {
+  padding-right: 20px;
+  font-size: 22px;
+}
+.modal-body-bottom-content a:focus,
+.modal-body-bottom-content a:hover {
+  text-decoration: none;
+  background-color: #e4e4e4;
+}
+
+/* buddhism-html-page */
+
+/* top-three-tab */
+#nav-home-tab,
+#nav-profile-tab,
+#nav-contact-tab {
+  width: 100px !important;
+  text-align: center;
+  padding-top: 5px;
+  margin: 0px 3px;
+  border-radius: 10px;
+  border: 1px solid var(--border-color);
+}
+#nav-home-tab:hover,
+#nav-profile-tab:hover,
+#nav-contact-tab:hover {
+  background-color: var(--place-holder-button);
+  color: var(--white);
+}
+
+.nav-tabs .nav-item.show .nav-link,
+.nav-tabs .nav-link.active {
+  color: var(--white);
+  border-color: var(--border-color);
+  background-color: var(--button-hover);
+}
+
+.main-video-container .col {
+  padding: 0px;
+  margin: 0px;
+}
+.nav-tabs {
+  margin-left: 10px;
+  border-bottom: 0px;
+}
+.animation-container .col {
+  padding: 0px;
+  margin: 0px;
+}
+
+.animation-content .row {
+  padding: 0px;
+  margin: 0px;
+}
+.animation {
+  width: 10%;
+  margin: auto;
+  text-align: center;
+  margin-bottom: -67px;
+  margin-top: 13px;
+}
+.animation img {
+  width: 100px;
+  height: 100px;
+}
+
+.buddhism-search-bar-container .row {
+  padding: 0px;
+  margin: 0px;
+}
+
+.buddhism-search-bar-container .top-search {
+  margin-left: 25%;
+  margin-bottom: -36px;
+}
+
+.buddhism-search-bar-content .example input[type="text"] {
+  padding: 4px 6px;
+  font-size: 17px;
+  border: 1px solid var(--border-color);
+  float: left;
+  width: 100%;
+  background: var(--white);
+  margin-left: 7px;
+  margin-top: 0px;
+}
+
+.tab-pane-title h2 {
+  padding-top: 10px;
+  margin: 0;
+  font-size: 1.4rem;
+  font-weight: 600;
+}
+
+#moretwentyeight {
+  display: none;
+}
+
+#moretwentynine {
+  display: none;
+}
+#morethirteen {
+  display: none;
+}
+#morethirtyone {
+  display: none;
+}
+
+.mb-0 {
+  margin-bottom: 0 !important;
+}
+/* top-tab-two-end */

@@ -1,0 +1,235 @@
+/* self-repent-info */
+/* top-banner */
+.self-repent img {
+  width: 100%;
+  height: 500px;
+}
+
+/* top-banner-end */
+
+/* self-repent-search-bar */
+
+.buddha-search-container {
+  padding: 25px;
+}
+form.example input[type="text"] {
+  padding: 4px 6px;
+  font-size: 17px;
+  border: 1px solid var(--border-color);
+  float: left;
+  width: 15%;
+  background: var(--white);
+  margin-left: 7px;
+  margin-top: 0px;
+  outline: none;
+}
+
+form.example button {
+  float: left;
+  color: var(--place-holder-button);
+  font-size: 17px;
+  border: 0px;
+  border-left: none;
+  cursor: pointer;
+  margin-left: -31px;
+  outline: none;
+  margin-top: 3px;
+  background-color: transparent;
+}
+
+::placeholder {
+  color: var(--placeholder);
+  font-size: 13px;
+}
+form.example button i:hover {
+  color: var(--blue);
+}
+
+form.example::after {
+  content: "";
+  clear: both;
+  display: table;
+}
+@media (min-width: 716px) and (max-width: 1100px) {
+  form.example input[type="text"] {
+    width: 24.25%;
+    margin-top: 5px;
+  }
+  form.example button {
+    margin-top: 9px;
+  }
+}
+@media (min-width: 716px) and (max-width: 955px) {
+  form.example input[type="text"] {
+    width: 20%;
+    margin-top: 5px;
+  }
+  form.example button {
+    margin-top: 9px;
+  }
+}
+
+@media (min-width: 500px) and (max-width: 715.98px) {
+  form.example input[type="text"] {
+    width: 48%;
+    margin-top: 5px;
+  }
+  form.example button {
+    margin-top: 9px;
+  }
+}
+@media (min-width: 150px) and (max-width: 499.98px) {
+  form.example input[type="text"] {
+    width: 99%;
+    margin-top: 5px;
+  }
+  form.example button {
+    margin-top: 9px;
+  }
+}
+/* searchbar-end */
+
+/* main-section */
+.row {
+  margin: 0;
+  padding: 0;
+}
+.col-md-6,
+.col-sm-12 {
+  margin: 0;
+  padding: 0;
+}
+.top-title {
+  padding: 50px 0px;
+}
+.top-title h1 {
+  text-align: center;
+  color: rgb(236 236 236);
+}
+
+.left-img-box {
+  width: 75%;
+  margin: auto;
+  border-style: solid;
+  padding: 20px;
+  border-radius: 20px;
+  border-width: 1px;
+  background-color: var(--left-img-box);
+  border-color: var(--orange);
+}
+
+.right-img-box {
+  width: 75%;
+  border-style: solid;
+  padding: 20px;
+  border-radius: 20px;
+  border-width: 1px;
+  background-color: var(--left-img-box);
+  border-color: var(--orange);
+}
+
+.left-img-box img {
+  width: 100%;
+  height: 300px;
+  border-radius: 10px;
+}
+.left-img-box img:hover {
+  opacity: 0.6;
+  transition: all 0.5s;
+}
+.right-img-box img:hover {
+  opacity: 0.6;
+  transition: all 0.5s;
+}
+.right-img-box img {
+  width: 100%;
+  height: 300px;
+  border-radius: 10px;
+}
+
+.p-box-right-container {
+  width: 80%;
+  height: auto;
+  margin-top: 50px;
+  color: var(--white);
+}
+.p-box-left-container {
+  width: 80%;
+  height: auto;
+  margin-top: 50px;
+  margin-left: 45px;
+  color: var(--white);
+  text-align: right;
+}
+
+.p-box-right-container p {
+  margin-top: 25px;
+}
+
+.p-box-left-container p {
+  margin-top: 25px;
+  text-align: right;
+}
+
+@media (min-width: 300px) and (max-width: 574.98px) {
+  .p-box-left-container {
+    width: 100%;
+    height: auto;
+    margin-top: 50px;
+    margin-left: 0;
+    color: var(--white);
+    text-align: center;
+  }
+
+  .p-box-right-container {
+    width: 100%;
+    height: auto;
+    margin-top: 50px;
+    color: var(--white);
+    text-align: center;
+  }
+  .p-box-right-container p {
+    text-align: center;
+    padding: 0px 20px;
+  }
+
+  .p-box-left-container p {
+    text-align: center;
+    padding: 0px 20px;
+  }
+  .left-img-box {
+    width: 100%;
+    margin: auto;
+    border-style: solid;
+    padding: 20px;
+    border-radius: 20px;
+    border-width: 1px;
+    background-color: var(--left-img-box);
+    border-color: var(--orange);
+  }
+
+  .right-img-box {
+    width: 100%;
+    border-style: solid;
+    padding: 20px;
+    border-radius: 20px;
+    border-width: 1px;
+    background-color: var(--left-img-box);
+    border-color: var(--orange);
+    margin: auto;
+  }
+}
+
+/* main-section-end */
+/* bell */
+a.nav-link.bell {
+  background: url(/img/nav/bell.png);
+  background-repeat: no-repeat;
+  background-size: 100%;
+  position: fixed;
+  top: 6em;
+  z-index: 9;
+  right: 12px;
+}
+/* bell-end */
+/* self-repent-info-end */
